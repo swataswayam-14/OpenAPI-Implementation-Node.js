@@ -1,10 +1,20 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import { openapispec } from './openapispec';
+import { DefaultService } from './generated';
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+
+
+async function getUserFn() {
+    const res = await DefaultService.getUser("1767");
+    console.log(res);
+    
+}
+
+
 
 let users = [
     { id: 1, name: 'John Doe' },
@@ -27,4 +37,5 @@ app.use('/documentation', swaggerUi.serve, swaggerUi.setup(openapispec));
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
+    getUserFn();
 });

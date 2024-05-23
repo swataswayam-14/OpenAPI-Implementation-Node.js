@@ -5,6 +5,11 @@ import { Hono } from "hono";
 import { swaggerUI } from "@hono/swagger-ui";
 
 
+// import { DefaultService } from "../generated";
+// const response = await DefaultService.getUser("1")
+
+//minimal implementation logic , we can call simple functions and get the data -> auto generated clients
+
 const app = new OpenAPIHono()
 
 
