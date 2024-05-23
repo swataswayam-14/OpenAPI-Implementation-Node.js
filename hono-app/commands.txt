@@ -1,0 +1,5 @@
+npm create hono@latest
+
+npm i @hono/zod-openapi
+
+npm i @hono/swagger-ui
